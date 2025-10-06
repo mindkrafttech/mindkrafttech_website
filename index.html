@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Under Maintenance</title>
+    <style>
+        /* Reset and basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Tech-inspired dark gradient */
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animated background particles for tech effect */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Cyan glow for tech feel */
+        }
+
+        .particle:nth-child(1) { width: 10px; height: 10px; top: 10%; left: 20%; animation-duration: 20s; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 15px; height: 15px; top: 30%; left: 40%; animation-duration: 25s; animation-delay: 2s; }
+        .particle:nth-child(3) { width: 8px; height: 8px; top: 50%; left: 60%; animation-duration: 18s; animation-delay: 4s; }
+        .particle:nth-child(4) { width: 12px; height: 12px; top: 70%; left: 80%; animation-duration: 22s; animation-delay: 6s; }
+        .particle:nth-child(5) { width: 20px; height: 20px; top: 20%; left: 10%; animation-duration: 30s; animation-delay: 8s; }
+        .particle:nth-child(6) { width: 14px; height: 14px; top: 40%; left: 30%; animation-duration: 28s; animation-delay: 10s; }
+        .particle:nth-child(7) { width: 18px; height: 18px; top: 60%; left: 50%; animation-duration: 26s; animation-delay: 12s; }
+        .particle:nth-child(8) { width: 16px; height: 16px; top: 80%; left: 70%; animation-duration: 24s; animation-delay: 14s; }
+        .particle:nth-child(9) { width: 9px; height: 9px; top: 15%; left: 85%; animation-duration: 19s; animation-delay: 16s; }
+        .particle:nth-child(10) { width: 11px; height: 11px; top: 35%; left: 5%; animation-duration: 21s; animation-delay: 18s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); opacity: 0.5; }
+            50% { transform: translateY(-100vh) translateX(50px); opacity: 1; }
+            100% { transform: translateY(-200vh) translateX(-50px); opacity: 0.5; }
+        }
+
+        /* Main container */
+        .container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent for depth */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.7); /* Neon cyan glow */
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 255, 255, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(0, 255, 255, 1); }
+            100% { transform: scale(1); box-shadow: 0 0 30px rgba(0, 255, 255, 0.7); }
+        }
+
+        /* Heading with typing animation */
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #00ffff; /* Cyan for tech theme */
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+            border-right: 0.15em solid #00ffff;
+            width: 0;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #00ffff; }
+        }
+
+        /* Subtext with fade-in */
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+            animation-delay: 4s; /* After heading types */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Lightning effect */
+        .lightning {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bolt {
+            position: absolute;
+            width: 4px;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(0, 255, 255, 0.8), rgba(0, 255, 255, 0));
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+            animation: lightning 1.5s infinite;
+            transform: rotate(45deg);
+        }
+
+        .bolt:nth-child(1) { top: 10%; left: 20%; animation-delay: 0.2s; }
+        .bolt:nth-child(2) { top: 30%; left: 50%; animation-delay: 0.5s; }
+        .bolt:nth-child(3) { top: 50%; left: 70%; animation-delay: 0.8s; }
+        .bolt:nth-child(4) { top: 70%; left: 30%; animation-delay: 1.1s; }
+
+        @keyframes lightning {
+            0% { opacity: 0; transform: translateY(0) rotate(45deg) scale(0.5); }
+            10% { opacity: 1; transform: translateY(20px) rotate(45deg) scale(1); }
+            20% { opacity: 0.7; transform: translateY(40px) rotate(45deg) scale(1.2); }
+            100% { opacity: 0; transform: translateY(100px) rotate(45deg) scale(0.8); }
+        }
+
+        /* Contact info with hover glow */
+        .contact {
+            font-size: 1.2em;
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+            animation-delay: 5s;
+        }
+
+        .contact a {
+            color: #00ffff;
+            text-decoration: none;
+            transition: text-shadow 0.3s;
+        }
+
+        .contact a:hover {
+            text-shadow: 0 0 10px #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="lightning">
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+    </div>
+
+    <div class="container">
+        <h1>Site Under Maintenance</h1>
+        <p>We're upgrading our systems to bring you a better experience. Stay tuned!</p>
+        <div class="contact">
+            Contact us: <a href="mailto:your.email@example.com">your.email@example.com</a> | Mobile: +1-123-456-7890
+        </div>
+    </div>
+</body>
+</html>
